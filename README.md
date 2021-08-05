@@ -13,7 +13,7 @@ OR
 ```sh
 yarn install
 yarn build
-yarn start:dev
+yarn start:prod
 ```
 
 ### Swagger
