@@ -12,6 +12,7 @@ async function bootstrap() {
     .addTag('room')
     .addTag('booking')
     .addTag('stats')
+    .addTag('populate')
     .build();
   SwaggerModule.setup('/docs', app, SwaggerModule.createDocument(app, config));
   await app.listen(Number(process.env.PORT || '3000'));

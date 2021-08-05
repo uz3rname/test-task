@@ -23,3 +23,17 @@ Available at `/docs`
 ### ER Diagram
 
 ![erdiagram](erd.png)
+
+### Tests
+
+```sh
+yarn test
+```
+
+Some tests are run only when db config is present.
+
+### E2E Tests
+
+```sh
+yarn test:e2e
+```

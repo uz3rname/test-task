@@ -1,6 +1,10 @@
 import { DynamicModule, Global, Module } from '@nestjs/common';
 import { Pool, ClientConfig } from 'pg';
-import { PG_POOL_TOKEN } from './store.constants';
+import {
+  BOOKINGS_TABLE_TOKEN,
+  PG_POOL_TOKEN,
+  ROOMS_TABLE_TOKEN,
+} from './store.constants';
 import { StoreService } from './store.service';
 
 @Module({
@@ -13,6 +17,14 @@ export class StoreModule {
     return {
       module: StoreModule,
       providers: [
+        {
+          provide: ROOMS_TABLE_TOKEN,
+          useValue: 'rooms',
+        },
+        {
+          provide: BOOKINGS_TABLE_TOKEN,
+          useValue: 'bookings',
+        },
         {
           provide: PG_POOL_TOKEN,
           useFactory: async () => {
