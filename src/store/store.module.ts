@@ -29,7 +29,6 @@ export class StoreModule {
           provide: PG_POOL_TOKEN,
           useFactory: async () => {
             const pool = new Pool(config);
-            await pool.connect();
 
             return pool;
           },
